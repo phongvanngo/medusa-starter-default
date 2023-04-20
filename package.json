@@ -31,7 +31,7 @@
     "@medusajs/cache-redis": "^1.8.0",
     "@medusajs/event-bus-local": "^1.8.0",
     "@medusajs/event-bus-redis": "^1.8.0",
-    "@novapo/medusajs-medusa": "^1.0.7",
+    "@novapo/medusajs-medusa": "^1.0.8",
     "@novapo/medusajs-medusa-cli": "^1.3.11",
     "babel-preset-medusa-package": "^1.1.13",
     "body-parser": "^1.19.0",

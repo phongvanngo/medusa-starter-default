@@ -5,14 +5,6 @@ WORKDIR /app/medusa
 COPY package.json .
 COPY yarn.* .
 
-RUN apt-get update
-
-RUN apt-get install -y python
-
-RUN npm install -g npm@8.1.2
-
-RUN npm install -g @novapo/medusajs-medusa-cli@latest
-
 RUN yarn
 
 COPY . .
