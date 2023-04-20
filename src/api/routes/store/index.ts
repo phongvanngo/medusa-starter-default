@@ -2,7 +2,7 @@ import * as cors from "cors"
 import { Router } from "express"
 import * as bodyParser from "body-parser"
 import customRouteHandler from "./custom-route-handler"
-import { wrapHandler } from "@medusajs/medusa";
+import { wrapHandler } from "@novapo/medusajs-medusa";
 
 const storeRouter = Router()
 export function getStoreRouter(storeCorsOptions): Router {

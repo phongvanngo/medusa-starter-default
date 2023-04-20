@@ -33,16 +33,16 @@ const DATABASE_URL = process.env.DATABASE_URL || "postgres://localhost/medusa-st
 const REDIS_URL = process.env.REDIS_URL || "redis://localhost:6379";
 
 const plugins = [
-  `medusa-fulfillment-manual`,
-  `medusa-payment-manual`,
+  `novapo-medusa-fulfillment-manual`,
+  `novapo-medusa-payment-manual`,
   // To enable the admin plugin, uncomment the following lines and run `yarn add @medusajs/admin`
-  // {
-  //   resolve: "@medusajs/admin",
-  //   /** @type {import('@medusajs/admin').PluginOptions} */
-  //   options: {
-  //     autoRebuild: true,
-  //   },
-  // },
+  {
+    resolve: "@medusajs/admin",
+    /** @type {import('@medusajs/admin').PluginOptions} */
+    options: {
+      autoRebuild: true,
+    },
+  },
 ];
 
 const modules = {
@@ -60,7 +60,7 @@ const modules = {
   },*/
 }
 
-/** @type {import('@medusajs/medusa').ConfigModule["projectConfig"]} */
+/** @type {import('@novapo/medusajs-medusa').ConfigModule["projectConfig"]} */
 const projectConfig = {
   jwtSecret: process.env.JWT_SECRET,
   cookieSecret: process.env.COOKIE_SECRET,
@@ -69,7 +69,7 @@ const projectConfig = {
   store_cors: STORE_CORS,
   admin_cors: ADMIN_CORS,
   // Uncomment the following lines to enable REDIS
-  // redis_url = REDIS_URL
+  redis_url : REDIS_URL
 }
 
 if (DATABASE_URL && DATABASE_TYPE === "postgres") {
@@ -78,7 +78,7 @@ if (DATABASE_URL && DATABASE_TYPE === "postgres") {
 }
 
 
-/** @type {import('@medusajs/medusa').ConfigModule} */
+/** @type {import('@novapo/medusajs-admin').ConfigModule} */
 module.exports = {
   projectConfig,
   plugins,
