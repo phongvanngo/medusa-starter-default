@@ -1,0 +1,17 @@
+version: "3.8"
+services:
+  backend:
+    image: phongvanngo/medusajs-backend:latest
+    container_name: medusa-backend
+    environment:
+      DATABASE_URL: postgres://novapo:novapo@45.119.85.106:3600/matkinh53-test-v4
+      REDIS_URL: redis://45.119.85.106:3700
+      JWT_SECRET: something
+      COOKIE_SECRET: something
+      PORT: 9000
+      NODE_ENV: production
+    ports:
+      - "9000:9000"
+
+volumes:
+  node_modules:
