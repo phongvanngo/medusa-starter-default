@@ -1467,10 +1467,10 @@
     winston "^3.8.2"
     yargs "^15.3.1"
 
-"@novapo/medusajs-medusa@^1.0.3":
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/@novapo/medusajs-medusa/-/medusajs-medusa-1.0.3.tgz#a8955ce54f018dff5a7a4a0d65438dbcda0abdd6"
-  integrity sha512-clvBiPzWoeQHEK4yO+uWA/n0r46zyJQS5hlqZyQ4WLQ2Vf7pTB221ykIy1nrdbp1TTO0YstD4+8D3tSv+eDNCw==
+"@novapo/medusajs-medusa@^1.0.5":
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/@novapo/medusajs-medusa/-/medusajs-medusa-1.0.5.tgz#319aa364d917cfe8c7f95a2f898a4f4bcc7107a0"
+  integrity sha512-9JIG1NV2TxWX4+xhpFrT2w5N7f9VlEYI+BqaKCtZVhu/cTpYgfdyBUqiHR479Xq3+fJayDkosD+lkwH/M1hw4w==
   dependencies:
     "@medusajs/modules-sdk" "1.8.2"
     "@medusajs/utils" "1.8.1"
