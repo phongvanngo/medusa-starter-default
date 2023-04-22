@@ -1,14 +1,15 @@
-# https://docs.npmjs.com/docker-and-private-modules
-FROM node:18
+FROM node:17.1.0
+
+WORKDIR /app/medusa
 
 COPY package.json .
-COPY package-lock.json .
+COPY package-lock.* .
 COPY .npmrc .
 
 RUN npm install
 
 COPY . .
 
-RUN npm run deploy:build
+RUN yarn deploy:build
 
-CMD npm run deploy:start
+ENTRYPOINT ["yarn","deploy:start"]
