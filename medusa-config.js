@@ -1,6 +1,7 @@
 const dotenv = require("dotenv");
 
 let ENV_FILE_NAME = "";
+console.log("env", process.env.NODE_ENV);
 switch (process.env.NODE_ENV) {
   case "production":
     ENV_FILE_NAME = ".env.production";
@@ -19,7 +20,7 @@ switch (process.env.NODE_ENV) {
 
 try {
   dotenv.config({ path: process.cwd() + "/" + ENV_FILE_NAME });
-} catch (e) {}
+} catch (e) { }
 
 // CORS when consuming Medusa from admin
 const ADMIN_CORS =
@@ -58,6 +59,12 @@ const modules = {
       redisUrl: REDIS_URL
     }
   },
+  inventoryService: "@medusajs/inventory",
+  stockLocationService: "@medusajs/stock-location",
+}
+
+const featureFlags = {
+  product_categories: true
 }
 
 /** @type {import('@medusajs/medusa').ConfigModule["projectConfig"]} */
@@ -69,7 +76,7 @@ const projectConfig = {
   store_cors: STORE_CORS,
   admin_cors: ADMIN_CORS,
   // Uncomment the following lines to enable REDIS
-  redis_url : REDIS_URL
+  redis_url: REDIS_URL
 }
 
 if (DATABASE_URL && DATABASE_TYPE === "postgres") {
@@ -82,5 +89,6 @@ if (DATABASE_URL && DATABASE_TYPE === "postgres") {
 module.exports = {
   projectConfig,
   plugins,
-	modules,
+  modules,
+  featureFlags
 };

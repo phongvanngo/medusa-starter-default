@@ -1,0 +1,79 @@
+{
+    "level": "error",
+    "message": "Error starting server",
+    "stack": [
+        {
+            "columnNumber": 27,
+            "fileName": "/node_modules/typeorm/metadata-builder/EntityMetadataValidator.js",
+            "functionName": null,
+            "lineNumber": 90,
+            "methodName": null,
+            "native": false,
+            "typeName": null
+        },
+        {
+            "columnNumber": null,
+            "fileName": null,
+            "functionName": "Array.forEach",
+            "lineNumber": null,
+            "methodName": "forEach",
+            "native": false,
+            "typeName": "Array"
+        },
+        {
+            "columnNumber": 18,
+            "fileName": "/node_modules/typeorm/metadata-builder/EntityMetadataValidator.js",
+            "functionName": "EntityMetadataValidator.validate",
+            "lineNumber": 86,
+            "methodName": "validate",
+            "native": false,
+            "typeName": "EntityMetadataValidator"
+        },
+        {
+            "columnNumber": 58,
+            "fileName": "/node_modules/typeorm/metadata-builder/EntityMetadataValidator.js",
+            "functionName": null,
+            "lineNumber": 38,
+            "methodName": null,
+            "native": false,
+            "typeName": null
+        },
+        {
+            "columnNumber": null,
+            "fileName": null,
+            "functionName": "Array.forEach",
+            "lineNumber": null,
+            "methodName": "forEach",
+            "native": false,
+            "typeName": "Array"
+        },
+        {
+            "columnNumber": 25,
+            "fileName": "/node_modules/typeorm/metadata-builder/EntityMetadataValidator.js",
+            "functionName": "EntityMetadataValidator.validateMany",
+            "lineNumber": 38,
+            "methodName": "validateMany",
+            "native": false,
+            "typeName": "EntityMetadataValidator"
+        },
+        {
+            "columnNumber": 33,
+            "fileName": "/node_modules/typeorm/data-source/DataSource.js",
+            "functionName": "DataSource.buildMetadatas",
+            "lineNumber": 470,
+            "methodName": "buildMetadatas",
+            "native": false,
+            "typeName": "DataSource"
+        },
+        {
+            "columnNumber": 13,
+            "fileName": "/node_modules/typeorm/data-source/DataSource.js",
+            "functionName": "async DataSource.initialize",
+            "lineNumber": 141,
+            "methodName": "initialize",
+            "native": false,
+            "typeName": "async DataSource"
+        }
+    ],
+    "timestamp": "2023-04-22 10:26:48"
+}
