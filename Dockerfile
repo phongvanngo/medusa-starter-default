@@ -6,7 +6,7 @@ COPY package.json .
 COPY package-lock.json .
 COPY .npmrc .
 
-RUN npm install
+RUN npm install --force
 
 COPY . .
 
