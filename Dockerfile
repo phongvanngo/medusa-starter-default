@@ -1,14 +1,11 @@
-FROM node:17.1.0
+FROM node:18
 
 WORKDIR /app/medusa
 
-COPY package.json .
-COPY yarn.* .
-
-RUN yarn
+RUN npm -v
 
 COPY . .
 
-RUN yarn build:prod
+COPY package.json .
 
-ENTRYPOINT ["yarn","start:prod"]
+ENTRYPOINT ["npm","run","start:prod"]
