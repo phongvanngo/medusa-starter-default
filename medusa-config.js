@@ -1,6 +1,11 @@
 const dotenv = require("dotenv");
 
-let ENV_FILE_NAME = "";
+
+console.log(process.env.DATABASE_TYPE);
+console.log(process.env.DATABASE_URL);
+console.log(process.env.REDIS_URL);
+console.log(process.env.NODE_ENV);
+
 switch (process.env.NODE_ENV) {
   case "production":
     ENV_FILE_NAME = ".env.production";
