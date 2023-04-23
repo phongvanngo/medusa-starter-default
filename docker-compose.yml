@@ -8,6 +8,7 @@ services:
       REDIS_URL: redis://45.119.85.106:3700
       JWT_SECRET: something
       COOKIE_SECRET: something
+      DATABASE_TYPE: postgres
       PORT: 9000
       NODE_ENV: production
     ports:
