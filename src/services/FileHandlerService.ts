@@ -9,7 +9,7 @@ import axios from "axios";
 const FormData = require("form-data");
 
 const options = {
-    baseUrl: "http://localhost:3000"
+    baseUrl: process.env.IMAGE_SERVICE_BASE_URL
 }
 
 class NovafileService extends AbstractFileService {
