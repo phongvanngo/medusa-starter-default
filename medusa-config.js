@@ -1,5 +1,6 @@
 const dotenv = require("dotenv");
 
+console.log("Novapo Medusa Backend - 1.0.0");
 
 console.log(process.env.DATABASE_TYPE);
 console.log(process.env.DATABASE_URL);
