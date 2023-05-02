@@ -4,13 +4,13 @@ services:
     image: phongvanngo/medusajs-backend:latest
     container_name: medusa-backend
     environment:
-      DATABASE_URL: postgres://novapo:novapo@45.119.85.106:3600/matkinh53-test-v7
+      DATABASE_URL: postgres://novapo:novapo@45.119.85.106:3600/matkinh53-test-v8
       REDIS_URL: redis://45.119.85.106:3700
       JWT_SECRET: something
       COOKIE_SECRET: something
       DATABASE_TYPE: postgres
       PORT: 9000
       NODE_ENV: production
-      IMAGE_SERVICE_BASE_URL: http://localhost:3000
+      IMAGE_SERVICE_BASE_URL: https://www.file.uat.matkinh53.com
     ports:
       - "9000:9000"
