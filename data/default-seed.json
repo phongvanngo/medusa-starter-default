@@ -1,9 +1,6 @@
 {
   "store": {
-    "currencies": [
-      "vnd",
-      "usd"
-    ]
+    "currencies": ["eur", "usd"]
   },
   "users": [
     {
@@ -13,41 +10,28 @@
   ],
   "regions": [
     {
-      "id": "test-region-vn",
-      "name": "VN",
-      "currency_code": "vnd",
+      "id": "test-region-eu",
+      "name": "EU",
+      "currency_code": "eur",
       "tax_rate": 0,
-      "payment_providers": [
-        "manual"
-      ],
-      "fulfillment_providers": [
-        "manual"
-      ],
-      "countries": [
-        "vn"
-      ]
+      "payment_providers": ["manual"],
+      "fulfillment_providers": ["manual"],
+      "countries": ["gb", "de", "dk", "se", "fr", "es", "it"]
     },
     {
       "id": "test-region-na",
       "name": "NA",
       "currency_code": "usd",
       "tax_rate": 0,
-      "payment_providers": [
-        "manual"
-      ],
-      "fulfillment_providers": [
-        "manual"
-      ],
-      "countries": [
-        "us",
-        "ca"
-      ]
+      "payment_providers": ["manual"],
+      "fulfillment_providers": ["manual"],
+      "countries": ["us", "ca"]
     }
   ],
   "shipping_options": [
     {
       "name": "PostFake Standard",
-      "region_id": "test-region-vn",
+      "region_id": "test-region-eu",
       "provider_id": "manual",
       "data": {
         "id": "manual-fulfillment"
@@ -57,28 +41,28 @@
     },
     {
       "name": "PostFake Express",
-      "region_id": "test-region-vn",
+      "region_id": "test-region-eu",
       "provider_id": "manual",
       "data": {
         "id": "manual-fulfillment"
       },
       "price_type": "flat_rate",
-      "amount": 100
+      "amount": 1500
     },
     {
       "name": "PostFake Return",
-      "region_id": "test-region-vn",
+      "region_id": "test-region-eu",
       "provider_id": "manual",
       "data": {
         "id": "manual-fulfillment"
       },
       "price_type": "flat_rate",
       "is_return": true,
-      "amount": 100
+      "amount": 1000
     },
     {
       "name": "I want to return it myself",
-      "region_id": "test-region-vn",
+      "region_id": "test-region-eu",
       "provider_id": "manual",
       "data": {
         "id": "manual-fulfillment"
@@ -95,7 +79,7 @@
         "id": "manual-fulfillment"
       },
       "price_type": "flat_rate",
-      "amount": 100
+      "amount": 800
     },
     {
       "name": "FakeEx Express",
@@ -105,7 +89,7 @@
         "id": "manual-fulfillment"
       },
       "price_type": "flat_rate",
-      "amount": 100
+      "amount": 1200
     },
     {
       "name": "FakeEx Return",
@@ -116,7 +100,7 @@
       },
       "price_type": "flat_rate",
       "is_return": true,
-      "amount": 100
+      "amount": 800
     },
     {
       "name": "I want to return it myself",
@@ -147,19 +131,11 @@
       "options": [
         {
           "title": "Size",
-          "values": [
-            "S",
-            "M",
-            "L",
-            "XL"
-          ]
+          "values": ["S", "M", "L", "XL"]
         },
         {
           "title": "Color",
-          "values": [
-            "Black",
-            "White"
-          ]
+          "values": ["Black", "White"]
         }
       ],
       "variants": [
@@ -167,12 +143,12 @@
           "title": "S / Black",
           "prices": [
             {
-              "currency_code": "vnd",
-              "amount": 1001950
+              "currency_code": "eur",
+              "amount": 1950
             },
             {
               "currency_code": "usd",
-              "amount": 1002200
+              "amount": 2200
             }
           ],
           "options": [
@@ -190,12 +166,12 @@
           "title": "S / White",
           "prices": [
             {
-              "currency_code": "vnd",
-              "amount": 1001950
+              "currency_code": "eur",
+              "amount": 1950
             },
             {
               "currency_code": "usd",
-              "amount": 1002200
+              "amount": 2200
             }
           ],
           "options": [
@@ -213,12 +189,12 @@
           "title": "M / Black",
           "prices": [
             {
-              "currency_code": "vnd",
-              "amount": 1001950
+              "currency_code": "eur",
+              "amount": 1950
             },
             {
               "currency_code": "usd",
-              "amount": 1002200
+              "amount": 2200
             }
           ],
           "options": [
@@ -236,12 +212,12 @@
           "title": "M / White",
           "prices": [
             {
-              "currency_code": "vnd",
-              "amount": 1001950
+              "currency_code": "eur",
+              "amount": 1950
             },
             {
               "currency_code": "usd",
-              "amount": 1002200
+              "amount": 2200
             }
           ],
           "options": [
@@ -259,12 +235,12 @@
           "title": "L / Black",
           "prices": [
             {
-              "currency_code": "vnd",
-              "amount": 1001950
+              "currency_code": "eur",
+              "amount": 1950
             },
             {
               "currency_code": "usd",
-              "amount": 1002200
+              "amount": 2200
             }
           ],
           "options": [
@@ -282,12 +258,12 @@
           "title": "L / White",
           "prices": [
             {
-              "currency_code": "vnd",
-              "amount": 1001950
+              "currency_code": "eur",
+              "amount": 1950
             },
             {
               "currency_code": "usd",
-              "amount": 1002200
+              "amount": 2200
             }
           ],
           "options": [
@@ -305,12 +281,12 @@
           "title": "XL / Black",
           "prices": [
             {
-              "currency_code": "vnd",
-              "amount": 1001950
+              "currency_code": "eur",
+              "amount": 1950
             },
             {
               "currency_code": "usd",
-              "amount": 1002200
+              "amount": 2200
             }
           ],
           "options": [
@@ -328,12 +304,12 @@
           "title": "XL / White",
           "prices": [
             {
-              "currency_code": "vnd",
-              "amount": 1001950
+              "currency_code": "eur",
+              "amount": 1950
             },
             {
               "currency_code": "usd",
-              "amount": 1002200
+              "amount": 2200
             }
           ],
           "options": [
@@ -363,12 +339,7 @@
       "options": [
         {
           "title": "Size",
-          "values": [
-            "S",
-            "M",
-            "L",
-            "XL"
-          ]
+          "values": ["S", "M", "L", "XL"]
         }
       ],
       "variants": [
@@ -376,12 +347,12 @@
           "title": "S",
           "prices": [
             {
-              "currency_code": "vnd",
-              "amount": 1002950
+              "currency_code": "eur",
+              "amount": 2950
             },
             {
               "currency_code": "usd",
-              "amount": 1003350
+              "amount": 3350
             }
           ],
           "options": [
@@ -396,12 +367,12 @@
           "title": "M",
           "prices": [
             {
-              "currency_code": "vnd",
-              "amount": 1002950
+              "currency_code": "eur",
+              "amount": 2950
             },
             {
               "currency_code": "usd",
-              "amount": 1003350
+              "amount": 3350
             }
           ],
           "options": [
@@ -416,12 +387,12 @@
           "title": "L",
           "prices": [
             {
-              "currency_code": "vnd",
-              "amount": 1002950
+              "currency_code": "eur",
+              "amount": 2950
             },
             {
               "currency_code": "usd",
-              "amount": 1003350
+              "amount": 3350
             }
           ],
           "options": [
@@ -436,12 +407,12 @@
           "title": "XL",
           "prices": [
             {
-              "currency_code": "vnd",
-              "amount": 1002950
+              "currency_code": "eur",
+              "amount": 2950
             },
             {
               "currency_code": "usd",
-              "amount": 1003350
+              "amount": 3350
             }
           ],
           "options": [
@@ -468,12 +439,7 @@
       "options": [
         {
           "title": "Size",
-          "values": [
-            "S",
-            "M",
-            "L",
-            "XL"
-          ]
+          "values": ["S", "M", "L", "XL"]
         }
       ],
       "variants": [
@@ -481,12 +447,12 @@
           "title": "S",
           "prices": [
             {
-              "currency_code": "vnd",
-              "amount": 1002950
+              "currency_code": "eur",
+              "amount": 2950
             },
             {
               "currency_code": "usd",
-              "amount": 1003350
+              "amount": 3350
             }
           ],
           "options": [
@@ -501,12 +467,12 @@
           "title": "M",
           "prices": [
             {
-              "currency_code": "vnd",
-              "amount": 1002950
+              "currency_code": "eur",
+              "amount": 2950
             },
             {
               "currency_code": "usd",
-              "amount": 1003350
+              "amount": 3350
             }
           ],
           "options": [
@@ -521,12 +487,12 @@
           "title": "L",
           "prices": [
             {
-              "currency_code": "vnd",
-              "amount": 1002950
+              "currency_code": "eur",
+              "amount": 2950
             },
             {
               "currency_code": "usd",
-              "amount": 1003350
+              "amount": 3350
             }
           ],
           "options": [
@@ -541,12 +507,12 @@
           "title": "XL",
           "prices": [
             {
-              "currency_code": "vnd",
-              "amount": 1002950
+              "currency_code": "eur",
+              "amount": 2950
             },
             {
               "currency_code": "usd",
-              "amount": 1003350
+              "amount": 3350
             }
           ],
           "options": [
@@ -573,12 +539,7 @@
       "options": [
         {
           "title": "Size",
-          "values": [
-            "S",
-            "M",
-            "L",
-            "XL"
-          ]
+          "values": ["S", "M", "L", "XL"]
         }
       ],
       "variants": [
@@ -586,12 +547,12 @@
           "title": "S",
           "prices": [
             {
-              "currency_code": "vnd",
-              "amount": 1002500
+              "currency_code": "eur",
+              "amount": 2500
             },
             {
               "currency_code": "usd",
-              "amount": 1002850
+              "amount": 2850
             }
           ],
           "options": [
@@ -606,12 +567,12 @@
           "title": "M",
           "prices": [
             {
-              "currency_code": "vnd",
-              "amount": 1002500
+              "currency_code": "eur",
+              "amount": 2500
             },
             {
               "currency_code": "usd",
-              "amount": 1002850
+              "amount": 2850
             }
           ],
           "options": [
@@ -626,12 +587,12 @@
           "title": "L",
           "prices": [
             {
-              "currency_code": "vnd",
-              "amount": 1002500
+              "currency_code": "eur",
+              "amount": 2500
             },
             {
               "currency_code": "usd",
-              "amount": 1002850
+              "amount": 2850
             }
           ],
           "options": [
@@ -646,12 +607,12 @@
           "title": "XL",
           "prices": [
             {
-              "currency_code": "vnd",
-              "amount": 1002500
+              "currency_code": "eur",
+              "amount": 2500
             },
             {
               "currency_code": "usd",
-              "amount": 1002850
+              "amount": 2850
             }
           ],
           "options": [
@@ -678,12 +639,7 @@
       "options": [
         {
           "title": "Size",
-          "values": [
-            "S",
-            "M",
-            "L",
-            "XL"
-          ]
+          "values": ["S", "M", "L", "XL"]
         }
       ],
       "variants": [
@@ -691,12 +647,12 @@
           "title": "S",
           "prices": [
             {
-              "currency_code": "vnd",
-              "amount": 1003650
+              "currency_code": "eur",
+              "amount": 3650
             },
             {
               "currency_code": "usd",
-              "amount": 1004150
+              "amount": 4150
             }
           ],
           "options": [
@@ -711,12 +667,12 @@
           "title": "M",
           "prices": [
             {
-              "currency_code": "vnd",
-              "amount": 1003650
+              "currency_code": "eur",
+              "amount": 3650
             },
             {
               "currency_code": "usd",
-              "amount": 1004150
+              "amount": 4150
             }
           ],
           "options": [
@@ -731,12 +687,12 @@
           "title": "L",
           "prices": [
             {
-              "currency_code": "vnd",
-              "amount": 1003650
+              "currency_code": "eur",
+              "amount": 3650
             },
             {
               "currency_code": "usd",
-              "amount": 1004150
+              "amount": 4150
             }
           ],
           "options": [
@@ -751,12 +707,12 @@
           "title": "XL",
           "prices": [
             {
-              "currency_code": "vnd",
-              "amount": 1003650
+              "currency_code": "eur",
+              "amount": 3650
             },
             {
               "currency_code": "usd",
-              "amount": 1004150
+              "amount": 4150
             }
           ],
           "options": [
@@ -783,12 +739,7 @@
       "options": [
         {
           "title": "Size",
-          "values": [
-            "S",
-            "M",
-            "L",
-            "XL"
-          ]
+          "values": ["S", "M", "L", "XL"]
         }
       ],
       "variants": [
@@ -796,12 +747,12 @@
           "title": "S",
           "prices": [
             {
-              "currency_code": "vnd",
-              "amount": 1003650
+              "currency_code": "eur",
+              "amount": 3650
             },
             {
               "currency_code": "usd",
-              "amount": 1004150
+              "amount": 4150
             }
           ],
           "options": [
@@ -816,12 +767,12 @@
           "title": "M",
           "prices": [
             {
-              "currency_code": "vnd",
-              "amount": 1003650
+              "currency_code": "eur",
+              "amount": 3650
             },
             {
               "currency_code": "usd",
-              "amount": 1004150
+              "amount": 4150
             }
           ],
           "options": [
@@ -836,12 +787,12 @@
           "title": "L",
           "prices": [
             {
-              "currency_code": "vnd",
-              "amount": 1003650
+              "currency_code": "eur",
+              "amount": 3650
             },
             {
               "currency_code": "usd",
-              "amount": 1004150
+              "amount": 4150
             }
           ],
           "options": [
@@ -856,12 +807,12 @@
           "title": "XL",
           "prices": [
             {
-              "currency_code": "vnd",
-              "amount": 1003650
+              "currency_code": "eur",
+              "amount": 3650
             },
             {
               "currency_code": "usd",
-              "amount": 1004150
+              "amount": 4150
             }
           ],
           "options": [
@@ -887,9 +838,7 @@
       "options": [
         {
           "title": "Size",
-          "values": [
-            "One Size"
-          ]
+          "values": ["One Size"]
         }
       ],
       "variants": [
@@ -897,12 +846,12 @@
           "title": "One Size",
           "prices": [
             {
-              "currency_code": "vnd",
-              "amount": 1001000
+              "currency_code": "eur",
+              "amount": 1000
             },
             {
               "currency_code": "usd",
-              "amount": 1001200
+              "amount": 1200
             }
           ],
           "options": [
@@ -916,327 +865,399 @@
       ]
     }
   ],
-  "categories": [
+  "categories":[
     {
-      "name": "Men",
-      "rank": 0,
-      "category_children": [
+      "name":"Men",
+      "rank":0,
+      "category_children":[
         {
-          "name": "Clothing",
-          "rank": 0,
-          "category_children": [
+          "name":"Clothing",
+          "rank":0,
+          "category_children":[
             {
-              "name": "T-shirts & Polos",
-              "rank": 0,
-              "category_children": [
+              "name":"T-shirts & Polos",
+              "rank":0,
+              "category_children":[
                 {
-                  "name": "Basic T-shirts",
-                  "rank": 0,
-                  "category_children": [],
-                  "handle": "men/clothing/t-shirts-&-polos/basic-t-shirts"
+                  "name":"Basic T-shirts",
+                  "rank":0,
+                  "category_children":[
+
+                  ],
+                  "handle":"men/clothing/t-shirts-&-polos/basic-t-shirts"
                 },
                 {
-                  "name": "Printed T-shirts",
-                  "rank": 1,
-                  "category_children": [],
-                  "handle": "men/clothing/t-shirts-&-polos/printed-t-shirts"
+                  "name":"Printed T-shirts",
+                  "rank":1,
+                  "category_children":[
+
+                  ],
+                  "handle":"men/clothing/t-shirts-&-polos/printed-t-shirts"
                 },
                 {
-                  "name": "Tank tops",
-                  "rank": 2,
-                  "category_children": [],
-                  "handle": "men/clothing/t-shirts-&-polos/tank-tops"
+                  "name":"Tank tops",
+                  "rank":2,
+                  "category_children":[
+
+                  ],
+                  "handle":"men/clothing/t-shirts-&-polos/tank-tops"
                 },
                 {
-                  "name": "Polo shirts",
-                  "rank": 3,
-                  "category_children": [],
-                  "handle": "men/clothing/t-shirts-&-polos/polo-shirts"
+                  "name":"Polo shirts",
+                  "rank":3,
+                  "category_children":[
+
+                  ],
+                  "handle":"men/clothing/t-shirts-&-polos/polo-shirts"
                 },
                 {
-                  "name": "Long-sleeved tops",
-                  "rank": 4,
-                  "category_children": [],
-                  "handle": "men/clothing/t-shirts-&-polos/long-sleeved-tops"
+                  "name":"Long-sleeved tops",
+                  "rank":4,
+                  "category_children":[
+
+                  ],
+                  "handle":"men/clothing/t-shirts-&-polos/long-sleeved-tops"
                 },
                 {
-                  "name": "Sports T-shirts",
-                  "rank": 5,
-                  "category_children": [],
-                  "handle": "men/clothing/t-shirts-&-polos/sports-t-shirts"
+                  "name":"Sports T-shirts",
+                  "rank":5,
+                  "category_children":[
+
+                  ],
+                  "handle":"men/clothing/t-shirts-&-polos/sports-t-shirts"
                 }
               ],
-              "handle": "men/clothing/t-shirts-&-polos"
+              "handle":"men/clothing/t-shirts-&-polos"
             },
             {
-              "name": "Shirts",
-              "rank": 1,
-              "category_children": [
+              "name":"Shirts",
+              "rank":1,
+              "category_children":[
                 {
-                  "name": "Casual Shirts",
-                  "rank": 0,
-                  "category_children": [],
-                  "handle": "men/clothing/shirts/casual-shirts"
+                  "name":"Casual Shirts",
+                  "rank":0,
+                  "category_children":[
+
+                  ],
+                  "handle":"men/clothing/shirts/casual-shirts"
                 },
                 {
-                  "name": "Business Shirts",
-                  "rank": 1,
-                  "category_children": [],
-                  "handle": "men/clothing/shirts/business-shirts"
+                  "name":"Business Shirts",
+                  "rank":1,
+                  "category_children":[
+
+                  ],
+                  "handle":"men/clothing/shirts/business-shirts"
                 }
               ],
-              "handle": "men/clothing/shirts"
+              "handle":"men/clothing/shirts"
             }
           ],
-          "handle": "men/clothing"
+          "handle":"men/clothing"
         },
         {
-          "name": "Shoes",
-          "rank": 1,
-          "category_children": [
+          "name":"Shoes",
+          "rank":1,
+          "category_children":[
             {
-              "name": "Sneakers",
-              "rank": 0,
-              "category_children": [
+              "name":"Sneakers",
+              "rank":0,
+              "category_children":[
                 {
-                  "name": "Low-Top Sneakers",
-                  "rank": 0,
-                  "category_children": [],
-                  "handle": "men/shoes/sneakers/low-top-sneakers"
+                  "name":"Low-Top Sneakers",
+                  "rank":0,
+                  "category_children":[
+
+                  ],
+                  "handle":"men/shoes/sneakers/low-top-sneakers"
                 },
                 {
-                  "name": "High-Top Sneakers",
-                  "rank": 1,
-                  "category_children": [],
-                  "handle": "men/shoes/sneakers/high-top-sneakers"
+                  "name":"High-Top Sneakers",
+                  "rank":1,
+                  "category_children":[
+
+                  ],
+                  "handle":"men/shoes/sneakers/high-top-sneakers"
                 },
                 {
-                  "name": "Skate shoes",
-                  "rank": 2,
-                  "category_children": [],
-                  "handle": "men/shoes/sneakers/skate-shoes"
+                  "name":"Skate shoes",
+                  "rank":2,
+                  "category_children":[
+
+                  ],
+                  "handle":"men/shoes/sneakers/skate-shoes"
                 }
               ],
-              "handle": "men/shoes/sneakers"
+              "handle":"men/shoes/sneakers"
             },
             {
-              "name": "Sports shoes",
-              "rank": 1,
-              "category_children": [
+              "name":"Sports shoes",
+              "rank":1,
+              "category_children":[
                 {
-                  "name": "Running shoes",
-                  "rank": 0,
-                  "category_children": [],
-                  "handle": "men/shoes/sports-shoes/running-shoes"
+                  "name":"Running shoes",
+                  "rank":0,
+                  "category_children":[
+
+                  ],
+                  "handle":"men/shoes/sports-shoes/running-shoes"
                 },
                 {
-                  "name": "Football boots",
-                  "rank": 1,
-                  "category_children": [],
-                  "handle": "men/shoes/sports-shoes/football-boots"
+                  "name":"Football boots",
+                  "rank":1,
+                  "category_children":[
+
+                  ],
+                  "handle":"men/shoes/sports-shoes/football-boots"
                 },
                 {
-                  "name": "Basketball shoes",
-                  "rank": 2,
-                  "category_children": [],
-                  "handle": "men/shoes/sports-shoes/basketball-shoes"
+                  "name":"Basketball shoes",
+                  "rank":2,
+                  "category_children":[
+
+                  ],
+                  "handle":"men/shoes/sports-shoes/basketball-shoes"
                 },
                 {
-                  "name": "Indoor shoes",
-                  "rank": 3,
-                  "category_children": [],
-                  "handle": "men/shoes/sports-shoes/indoor-shoes"
+                  "name":"Indoor shoes",
+                  "rank":3,
+                  "category_children":[
+
+                  ],
+                  "handle":"men/shoes/sports-shoes/indoor-shoes"
                 },
                 {
-                  "name": "Boots",
-                  "rank": 4,
-                  "category_children": [],
-                  "handle": "men/shoes/sports-shoes/boots"
+                  "name":"Boots",
+                  "rank":4,
+                  "category_children":[
+
+                  ],
+                  "handle":"men/shoes/sports-shoes/boots"
                 }
               ],
-              "handle": "men/shoes/sports-shoes"
+              "handle":"men/shoes/sports-shoes"
             },
             {
-              "name": "Business shoes",
-              "rank": 2,
-              "category_children": [],
-              "handle": "men/shoes/business-shoes"
+              "name":"Business shoes",
+              "rank":2,
+              "category_children":[
+
+              ],
+              "handle":"men/shoes/business-shoes"
             }
           ],
-          "handle": "men/shoes"
+          "handle":"men/shoes"
         }
       ],
-      "handle": "men"
+      "handle":"men"
     },
     {
-      "name": "Women",
-      "rank": 1,
-      "category_children": [
+      "name":"Women",
+      "rank":1,
+      "category_children":[
         {
-          "name": "Clothing",
-          "rank": 0,
-          "category_children": [
+          "name":"Clothing",
+          "rank":0,
+          "category_children":[
             {
-              "name": "Shirts",
-              "rank": 0,
-              "category_children": [
+              "name":"Shirts",
+              "rank":0,
+              "category_children":[
                 {
-                  "name": "Casual Shirts",
-                  "rank": 0,
-                  "category_children": [],
-                  "handle": "women/clothing/shirts/casual-shirts"
+                  "name":"Casual Shirts",
+                  "rank":0,
+                  "category_children":[
+
+                  ],
+                  "handle":"women/clothing/shirts/casual-shirts"
                 },
                 {
-                  "name": "Business Shirts",
-                  "rank": 1,
-                  "category_children": [],
-                  "handle": "women/clothing/shirts/business-shirts"
+                  "name":"Business Shirts",
+                  "rank":1,
+                  "category_children":[
+
+                  ],
+                  "handle":"women/clothing/shirts/business-shirts"
                 }
               ],
-              "handle": "women/clothing/shirts"
+              "handle":"women/clothing/shirts"
             },
             {
-              "name": "Sweatshirts & Hoodies",
-              "rank": 1,
-              "category_children": [
+              "name":"Sweatshirts & Hoodies",
+              "rank":1,
+              "category_children":[
                 {
-                  "name": "Hoodies",
-                  "rank": 0,
-                  "category_children": [],
-                  "handle": "women/clothing/sweatshirts-&-hoodies/hoodies"
+                  "name":"Hoodies",
+                  "rank":0,
+                  "category_children":[
+
+                  ],
+                  "handle":"women/clothing/sweatshirts-&-hoodies/hoodies"
                 },
                 {
-                  "name": "Sweatshirts",
-                  "rank": 1,
-                  "category_children": [],
-                  "handle": "women/clothing/sweatshirts-&-hoodies/sweatshirts"
+                  "name":"Sweatshirts",
+                  "rank":1,
+                  "category_children":[
+
+                  ],
+                  "handle":"women/clothing/sweatshirts-&-hoodies/sweatshirts"
                 }
               ],
-              "handle": "women/clothing/sweatshirts-&-hoodies"
+              "handle":"women/clothing/sweatshirts-&-hoodies"
             },
             {
-              "name": "Jeans",
-              "rank": 2,
-              "category_children": [
+              "name":"Jeans",
+              "rank":2,
+              "category_children":[
                 {
-                  "name": "Skinny fit",
-                  "rank": 0,
-                  "category_children": [],
-                  "handle": "women/clothing/jeans/skinny-fit"
+                  "name":"Skinny fit",
+                  "rank":0,
+                  "category_children":[
+
+                  ],
+                  "handle":"women/clothing/jeans/skinny-fit"
                 },
                 {
-                  "name": "Slim fit",
-                  "rank": 1,
-                  "category_children": [],
-                  "handle": "women/clothing/jeans/slim-fit"
+                  "name":"Slim fit",
+                  "rank":1,
+                  "category_children":[
+
+                  ],
+                  "handle":"women/clothing/jeans/slim-fit"
                 },
                 {
-                  "name": "Straight leg",
-                  "rank": 2,
-                  "category_children": [],
-                  "handle": "women/clothing/jeans/straight-leg"
+                  "name":"Straight leg",
+                  "rank":2,
+                  "category_children":[
+
+                  ],
+                  "handle":"women/clothing/jeans/straight-leg"
                 },
                 {
-                  "name": "Tapered fit",
-                  "rank": 3,
-                  "category_children": [],
-                  "handle": "women/clothing/jeans/tapered-fit"
+                  "name":"Tapered fit",
+                  "rank":3,
+                  "category_children":[
+
+                  ],
+                  "handle":"women/clothing/jeans/tapered-fit"
                 }
               ],
-              "handle": "women/clothing/jeans"
+              "handle":"women/clothing/jeans"
             }
           ],
-          "handle": "women/clothing"
+          "handle":"women/clothing"
         },
         {
-          "name": "Shoes",
-          "rank": 1,
-          "category_children": [
+          "name":"Shoes",
+          "rank":1,
+          "category_children":[
             {
-              "name": "Sports shoes",
-              "rank": 0,
-              "category_children": [
+              "name":"Sports shoes",
+              "rank":0,
+              "category_children":[
                 {
-                  "name": "Running shoes",
-                  "rank": 0,
-                  "category_children": [],
-                  "handle": "women/shoes/sports-shoes/running-shoes"
+                  "name":"Running shoes",
+                  "rank":0,
+                  "category_children":[
+
+                  ],
+                  "handle":"women/shoes/sports-shoes/running-shoes"
                 },
                 {
-                  "name": "Training shoes",
-                  "rank": 1,
-                  "category_children": [],
-                  "handle": "women/shoes/sports-shoes/training-shoes"
+                  "name":"Training shoes",
+                  "rank":1,
+                  "category_children":[
+
+                  ],
+                  "handle":"women/shoes/sports-shoes/training-shoes"
                 },
                 {
-                  "name": "Football boots",
-                  "rank": 2,
-                  "category_children": [],
-                  "handle": "women/shoes/sports-shoes/football-boots"
+                  "name":"Football boots",
+                  "rank":2,
+                  "category_children":[
+
+                  ],
+                  "handle":"women/shoes/sports-shoes/football-boots"
                 },
                 {
-                  "name": "Basketball shoes",
-                  "rank": 3,
-                  "category_children": [],
-                  "handle": "women/shoes/sports-shoes/basketball-shoes"
+                  "name":"Basketball shoes",
+                  "rank":3,
+                  "category_children":[
+
+                  ],
+                  "handle":"women/shoes/sports-shoes/basketball-shoes"
                 },
                 {
-                  "name": "Hiking & mountaineering shoes",
-                  "rank": 4,
-                  "category_children": [],
-                  "handle": "women/shoes/sports-shoes/hiking-&-mountaineering-shoes"
+                  "name":"Hiking & mountaineering shoes",
+                  "rank":4,
+                  "category_children":[
+
+                  ],
+                  "handle":"women/shoes/sports-shoes/hiking-&-mountaineering-shoes"
                 },
                 {
-                  "name": "Boots",
-                  "rank": 5,
-                  "category_children": [],
-                  "handle": "women/shoes/sports-shoes/boots"
+                  "name":"Boots",
+                  "rank":5,
+                  "category_children":[
+
+                  ],
+                  "handle":"women/shoes/sports-shoes/boots"
                 }
               ],
-              "handle": "women/shoes/sports-shoes"
+              "handle":"women/shoes/sports-shoes"
             },
             {
-              "name": "Business shoes",
-              "rank": 1,
-              "category_children": [],
-              "handle": "women/shoes/business-shoes"
+              "name":"Business shoes",
+              "rank":1,
+              "category_children":[
+
+              ],
+              "handle":"women/shoes/business-shoes"
             },
             {
-              "name": "Boots",
-              "rank": 2,
-              "category_children": [
+              "name":"Boots",
+              "rank":2,
+              "category_children":[
                 {
-                  "name": "Lace-up boots",
-                  "rank": 0,
-                  "category_children": [],
-                  "handle": "women/shoes/boots/lace-up-boots"
+                  "name":"Lace-up boots",
+                  "rank":0,
+                  "category_children":[
+
+                  ],
+                  "handle":"women/shoes/boots/lace-up-boots"
                 },
                 {
-                  "name": "Ankle boots",
-                  "rank": 1,
-                  "category_children": [],
-                  "handle": "women/shoes/boots/ankle-boots"
+                  "name":"Ankle boots",
+                  "rank":1,
+                  "category_children":[
+
+                  ],
+                  "handle":"women/shoes/boots/ankle-boots"
                 },
                 {
-                  "name": "Winter Boots",
-                  "rank": 2,
-                  "category_children": [],
-                  "handle": "women/shoes/boots/winter-boots"
+                  "name":"Winter Boots",
+                  "rank":2,
+                  "category_children":[
+
+                  ],
+                  "handle":"women/shoes/boots/winter-boots"
                 }
               ],
-              "handle": "women/shoes/boots"
+              "handle":"women/shoes/boots"
             },
             {
-              "name": "Slippers",
-              "rank": 3,
-              "category_children": [],
-              "handle": "women/shoes/slippers"
+              "name":"Slippers",
+              "rank":3,
+              "category_children":[
+
+              ],
+              "handle":"women/shoes/slippers"
             }
           ],
-          "handle": "women/shoes"
+          "handle":"women/shoes"
         }
       ],
-      "handle": "women"
+      "handle":"women"
     }
   ]
 }
