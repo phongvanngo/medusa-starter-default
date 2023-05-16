@@ -5,9 +5,9 @@ name: Node.js CI
 
 on:
   push:
-    branches: ["project/matkinh53/release-uat"]
+    branches: ["project/matkinh53/develop"]
   pull_request:
-    branches: ["project/matkinh53/release-uat"]
+    branches: ["project/matkinh53/develop"]
 
 env:
   version: ${{ github.sha }}
