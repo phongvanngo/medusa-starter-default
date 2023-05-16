@@ -5,46 +5,49 @@ name: Node.js CI
 
 on:
   push:
-    branches: [ "develop" ]
+    branches: ["project/matkinh53/release-uat"]
   pull_request:
-    branches: [ "develop" ]
+    branches: ["project/matkinh53/release-uat"]
 
 env:
   version: ${{ github.sha }}
   dockerhub_username: ${{ secrets.DOCKERHUB_USERNAME }}
   dockerhub_password: ${{ secrets.DOCKERHUB_PASSWORD }}
   DATE_TIME: $(date +'%d-%m-%Y-%H-%M-%S')
+  IMAGE_VERSION: "1.3.0"
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
+      - uses: actions/checkout@v3
 
-    - name: Build Docker image
-      run:
-        docker build . --file Dockerfile --tag phongvanngo/medusajs-backend:latest;
-        docker tag phongvanngo/medusajs-backend:latest phongvanngo/medusajs-backend:${{ env.DATE_TIME }};
-    
-    - name: Push Docker Image
-      run:
-        docker login --username=${dockerhub_username} --password=${dockerhub_password};
-        docker push phongvanngo/medusajs-backend:${{ env.DATE_TIME }};
-        docker push phongvanngo/medusajs-backend:latest;
+      - name: Build Docker image
+        run: |
+          docker build \
+          --build-arg PUBLIC_URL=https://strapi.uat.matkinh53.com \
+          -t phongvanngo/medusajs-backend:${{ env.IMAGE_VERSION }} . ;
+
+      - name: Push Docker Image
+        run:
+          docker login --username=${dockerhub_username} --password=${dockerhub_password};
+          docker push phongvanngo/medusajs-backend:${{ env.IMAGE_VERSION }};
 
   deploy:
     runs-on: ubuntu-latest
     needs: build
     steps:
-    - name: executing remote ssh to DrDongPhuong commands using password 
-      uses: appleboy/ssh-action@master
-      with:
-        host: ${{ secrets.SERVER_HOST }}
-        username: ${{ secrets.SERVER_USERNAME }}
-        password: ${{ secrets.SERVER_PASSWORD }}
-        script: 
-          cd matkinh53-uat/matkinh53-deployment/uat/backend/v1;
-          docker pull phongvanngo/medusajs-backend:latest;
-          docker-compose up -d;
+      - name: executing remote ssh to DrDongPhuong commands using password
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.SERVER_HOST }}
+          username: ${{ secrets.SERVER_USERNAME }}
+          password: ${{ secrets.SERVER_PASSWORD }}
+          script: cd matkinh53-uat/matkinh53-deployment/uat/backend/v1;
+            git pull;
+            docker pull phongvanngo/medusajs-backend:${{ env.IMAGE_VERSION }};
+            export STRAPI_IMAGE_TAG=${{ env.IMAGE_VERSION }};
+            docker-compose up -d;
+            docker system prune -a -f;
+            docker images;
