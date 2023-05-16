@@ -44,7 +44,8 @@ jobs:
           host: ${{ secrets.SERVER_HOST }}
           username: ${{ secrets.SERVER_USERNAME }}
           password: ${{ secrets.SERVER_PASSWORD }}
-          script: cd matkinh53-uat/matkinh53-deployment/uat/backend/v1;
+          script: cd matkinh53-uat/matkinh53-deployment/uat/backend;
+            git pull;
             export IMAGE_TAG=${{ env.IMAGE_VERSION }};
             docker-compose up -d;
             docker system prune -a -f;
