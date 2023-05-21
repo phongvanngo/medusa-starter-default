@@ -41,10 +41,10 @@ jobs:
       - name: executing remote ssh to DrDongPhuong commands using password
         uses: appleboy/ssh-action@master
         with:
-          host: ${{ secrets.SERVER_HOST }}
+          host: ${{ secrets.SERVER_ATHENA_HOST }}
           username: ${{ secrets.SERVER_USERNAME }}
-          password: ${{ secrets.SERVER_PASSWORD }}
-          script: cd matkinh53-uat/matkinh53-deployment/uat/backend;
+          password: ${{ secrets.SERVER_ATHENA_PASSWORD }}
+          script: cd /root/matkinh53/matkinh53-deployment/uat/backend;
             git pull;
             export IMAGE_TAG=${{ env.IMAGE_VERSION }};
             docker-compose up -d;
