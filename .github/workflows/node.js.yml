@@ -26,7 +26,6 @@ jobs:
       - name: Build Docker image
         run: |
           docker build \
-          --build-arg PUBLIC_URL=https://strapi.uat.matkinh53.com \
           -t phongvanngo/medusajs-backend:${{ env.IMAGE_VERSION }} . ;
 
       - name: Push Docker Image
