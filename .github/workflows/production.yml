@@ -1,0 +1,51 @@
+# This workflow will do a clean installation of node dependencies, cache/restore them, build the source code and run tests across different versions of node
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-nodejs
+
+name: Node.js CI
+
+on:
+  push:
+    branches: ["project/matkinh53/production"]
+  pull_request:
+    branches: ["project/matkinh53/production"]
+
+env:
+  version: ${{ github.sha }}
+  dockerhub_username: ${{ secrets.DOCKERHUB_USERNAME }}
+  dockerhub_password: ${{ secrets.DOCKERHUB_PASSWORD }}
+  DATE_TIME: $(date +'%d-%m-%Y-%H-%M-%S')
+  IMAGE_VERSION: 'prod-1.3.0-$(echo "${{ github.sha }}" | cut -c 1-7)'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Build Docker image
+        run: |
+          docker build \
+          -t phongvanngo/medusajs-backend:${{ env.IMAGE_VERSION }} . ;
+
+      - name: Push Docker Image
+        run:
+          docker login --username=${dockerhub_username} --password=${dockerhub_password};
+          docker push phongvanngo/medusajs-backend:${{ env.IMAGE_VERSION }};
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: executing remote ssh to CUPID SERVER commands using password
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.SERVER_CUPID_HOST }}
+          username: ${{ secrets.SERVER_CUPID_USERNAME }}
+          password: ${{ secrets.SERVER_CUPID_PASSWORD }}
+          script: cd /root/matkinh53/matkinh53-deployment/prod/backend;
+            git pull;
+            export IMAGE_TAG=${{ env.IMAGE_VERSION }};
+            docker-compose up -d;
+            docker system prune -a -f;
+            docker images;
